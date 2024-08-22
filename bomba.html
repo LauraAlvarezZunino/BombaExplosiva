@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explotando Bomba</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; 
+        }    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="bomba" 
+            src="https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png"  
+            style="width: 100px;" />
+    </div>
+
+    <script>
+        function aumentar() {
+            let size = parseInt(imgBomba.style.width); // Convertir el tamaño a número
+            size += 65;
+            imgBomba.style.width = size + "px";
+
+            if (size >= explosionSize){
+                imgBomba.src ="https://i.ibb.co/D49jPyz/descarga-1-removebg-preview.png"; 
+        }
+    }
+    
+        function disminuir() {
+            let size = parseInt(imgBomba.style.width);
+            size -= 20; 
+            imgBomba.style.width = size + "px";   
+        }
+
+        const imgBomba = document.getElementById("bomba");
+        const explosionSize = 500; //limite max
+    
+        document.addEventListener('keydown', function(e) {
+            switch (e.key) {
+          
+                case 'ArrowUp':   
+                    if (imgBomba.src.includes("https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png")) { // Verifica si aún es una bomba
+                        aumentar();
+                    }
+                break;
+                
+                case 'ArrowDown': 
+                    if (imgBomba.src.includes("https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png")) { // Verifica si aún es una bomba
+                        disminuir();
+                }
+                break;
+            
+            }         
+        });
+        
+    </script>
+</body>
+</html>
