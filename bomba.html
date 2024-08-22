@@ -24,7 +24,7 @@
 
     <script>
         function aumentar() {
-            let size = parseInt(imgBomba.style.width); // Convertir el tamaño a número
+            let size = parseInt(imgBomba.style.width); // convierto el tamaño a número entero
             size += 65;
             imgBomba.style.width = size + "px";
 
@@ -46,13 +46,13 @@
             switch (e.key) {
           
                 case 'ArrowUp':   
-                    if (imgBomba.src.includes("https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png")) { // Verifica si aún es una bomba
+                    if (imgBomba.src.includes("https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png")) { //veo si aún es una bomba
                         aumentar();
                     }
                 break;
                 
                 case 'ArrowDown': 
-                    if (imgBomba.src.includes("https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png")) { // Verifica si aún es una bomba
+                    if (imgBomba.src.includes("https://i.ibb.co/J52RT7F/cute-bomb-cartoon-by-Vexels.png")) { 
                         disminuir();
                 }
                 break;
